@@ -56,11 +56,17 @@ class GSuiteAuthenticator extends Authenticator
 
         if ($payload) {
             if (!array_key_exists('hd', $payload)) {
-                return null; # auth failed
+                $form->sessionMessage(_t('GSuiteAuthenticator.UnknownError', 'Unknown Error'), 'bad');
+                return null;
             }
 
             if ($payload['hd'] != $domain) {
-                return null; # auth failed
+                $message = str_replace(
+                    '##DOMAIN##', $domain,
+                    _t('GSuiteAuthenticator.DomainError', 'Domain Error'));
+
+                $form->sessionMessage($message, 'warning');
+                return null;
             }
 
             $email = $payload['email'];
@@ -71,11 +77,6 @@ class GSuiteAuthenticator extends Authenticator
             # $photo = $payload['picture'];
             # $emailVerified = $payload['email_verified']; # not sure what this var is for
 
-            /***
-             * @var $member Member
-             */
-
-            Session::set('gsuite_token', $payload['jti']);
             $member = Member::get()
                 ->filter(Member::config()->unique_identifier_field, $email)
                 ->first();

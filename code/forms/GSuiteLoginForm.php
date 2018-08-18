@@ -37,7 +37,7 @@ class GSuiteLoginForm extends LoginForm
     public function dologin($data) {
         $member = GSuiteAuthenticator::authenticate($data, $this);
         if ($member == null) {
-            return; // TODO
+            return $this->controller->redirectBack();
         }
 
         $member->logIn();
@@ -47,6 +47,4 @@ class GSuiteLoginForm extends LoginForm
         Session::clear('BackURL');
         return $this->controller->redirect($url);
     }
-
-    # TODO: Logout
 }
