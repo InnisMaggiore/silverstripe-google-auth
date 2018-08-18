@@ -1,15 +1,15 @@
 {
-  "name": "innis-maggiore/gsuite-authenticator",
-  "description": "Authenticate CMS users with Google's Website Signin",
+  "name": "innis-maggiore/google-authenticator",
+  "description": "Authenticate CMS users with Google's Website Sign-in",
   "type": "silverstripe-module",
-  "homepage": "https://github.com/InnisMaggiore/silverstripe-gsuite-authenticator",
+  "homepage": "https://github.com/InnisMaggiore/silverstripe-google-auth",
   "keywords": ["silverstripe", "google", "gsuite"],
   "license": "BSD-3-Clause",
   "authors": [
     {"name": "Dave Collins","email": "dave.collins@innismaggiore.com"}
   ],
   "support": {
-    "issues": "https://github.com/InnisMaggiore/silverstripe-gsuite-authenticator"
+    "issues": "https://github.com/InnisMaggiore/silverstripe-google-auth/issues"
   },
   "require": {
     "silverstripe/cms": "3.7.*",
