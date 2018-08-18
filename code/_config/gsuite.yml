@@ -22,9 +22,3 @@ SiteTree:
 GSuiteAuthExtension:
   client_id:
     '894760351964-rvnnhfj89s5t4h34ul2pacnoanv1amlr.apps.googleusercontent.com'
-  client_secret:
-    'RNdM26NeXujIGTFRrj_Dqwul'
-
-Member:
-  extensions:
-    - 'GSuiteMemberExtension'
