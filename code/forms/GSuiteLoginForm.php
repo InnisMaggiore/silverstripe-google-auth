@@ -22,6 +22,7 @@ class GSuiteLoginForm extends LoginForm
 
         $fields = FieldList::create(
             HiddenField::create("token", null, ''),
+            HiddenField::create("AuthenticationMethod", null, $this->authenticator_class, $this),
             GSuiteLoginButton::create("button")
         );
 
