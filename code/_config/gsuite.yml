@@ -7,7 +7,7 @@ GSuiteAuthenticator:
   name:
     'Google Sign-In'
   domain:
-    'innismaggiore.com'
+    ''
   create_new_users:
     true
   default_new_user_group:
@@ -21,4 +21,4 @@ SiteTree:
 
 GSuiteAuthExtension:
   client_id:
-    '894760351964-rvnnhfj89s5t4h34ul2pacnoanv1amlr.apps.googleusercontent.com'
+    ''
