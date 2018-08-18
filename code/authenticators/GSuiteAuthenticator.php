@@ -55,17 +55,8 @@ class GSuiteAuthenticator extends Authenticator
         $payload = $client->verifyIdToken($token);
 
         if ($payload) {
-            if (!array_key_exists('hd', $payload)) {
-                $form->sessionMessage(_t('GSuiteAuthenticator.UnknownError', 'Unknown Error'), 'bad');
-                return null;
-            }
-
-            if ($payload['hd'] != $domain) {
-                $message = str_replace(
-                    '##DOMAIN##', $domain,
-                    _t('GSuiteAuthenticator.DomainError', 'Domain Error'));
-
-                $form->sessionMessage($message, 'warning');
+            if (!array_key_exists('hd', $payload) || $payload['hd'] != $domain) {
+                $form->sessionMessage(_t('GSuiteAuthenticator.DomainError', 'Domain Error'), 'warning');
                 return null;
             }
 
@@ -85,6 +76,8 @@ class GSuiteAuthenticator extends Authenticator
             $createNew = Config::inst()->get('GSuiteAuthenticator', 'create_new_users');
             if (!$member && $createNew) {
                 $member = self::create_member($email, $firstName, $lastName);
+            } else {
+                $form->sessionMessage(_t('GSuiteAuthenticator.UserError', 'User does not exist'), 'warning');
             }
 
             if ($member) {

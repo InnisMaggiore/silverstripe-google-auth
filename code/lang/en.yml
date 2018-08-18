@@ -1,5 +1,5 @@
 en:
   GSuiteAuthenticator:
     UnknownError: 'An unknown error occurred. Please contact an administrator'
-    DomainError: '##DOMAIN## is not a valid Google Domain'
-
+    DomainError: 'Not a valid Google domain'
+    UserError: 'User does not exist'
