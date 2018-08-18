@@ -1,5 +1,5 @@
 {
-  "name": "innis-maggiore/google-authenticator",
+  "name": "innis-maggiore/silverstripe-google-auth",
   "description": "Authenticate CMS users with Google's Website Sign-in",
   "type": "silverstripe-module",
   "homepage": "https://github.com/InnisMaggiore/silverstripe-google-auth",
