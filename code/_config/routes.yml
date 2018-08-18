@@ -1,0 +1,7 @@
+---
+Name: amp
+After: framework/routes#coreroutes
+---
+Director:
+  rules:
+    'gsuite': 'GSuiteController'

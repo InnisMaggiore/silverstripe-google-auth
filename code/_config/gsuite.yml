@@ -1,0 +1,30 @@
+---
+Name: gsuitesettings
+After: '#rootroutes'
+---
+
+GSuiteAuthenticator:
+  name:
+    'GSuite'
+  domain:
+    'innismaggiore.com'
+  create_new_users:
+    true
+  default_new_user_group:
+    'content-authors'
+  new_password_length:
+    20
+
+SiteTree:
+  extensions:
+    - 'GSuiteAuthExtension'
+
+GSuiteAuthExtension:
+  client_id:
+    '894760351964-rvnnhfj89s5t4h34ul2pacnoanv1amlr.apps.googleusercontent.com'
+  client_secret:
+    'RNdM26NeXujIGTFRrj_Dqwul'
+
+Member:
+  extensions:
+    - 'GSuiteMemberExtension'
